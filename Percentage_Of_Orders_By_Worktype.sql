@@ -23,6 +23,8 @@ from
                  AND work_type != 'Backorder Pending'
                  AND work_type != 'Email Gift Certificates'
                  AND work_type != 'Flags Pending (exclusions)'
+                 AND work_type != 'Single Line Single Unit Backorder'
+                 AND work_type != 'Single Line Unit Backorder'
            GROUP BY ewt.work_type
          ) All_Orders
       ) AS total,
@@ -46,7 +48,11 @@ from
                  AND work_type != 'Backorder Pending'
                  AND work_type != 'Email Gift Certificates'
                  AND work_type != 'Flags Pending (exclusions)'
+                 AND work_type != 'Single Line Single Unit Backorder'
+                 AND work_type != 'Single Line Unit Backorder'
            GROUP BY ewt.work_type
          ) All_orders
 
   ) final_table
+
+
